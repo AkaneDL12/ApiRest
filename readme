@@ -1,0 +1,70 @@
+Backend Node.js + MongoDB
+
+Este proyecto corresponde al backend de la aplicación, desarrollado con Node.js, Express y Mongoose para conectarse a MongoDB.
+
+=============================================================
+REQUISITOS PREVIOS
+
+- Node.js >= 18
+- npm >= 9
+- MongoDB local o en Docker
+
+=============================================================
+1️⃣ CLONAR EL PROYECTO
+
+git clone <url-del-repo>
+cd backend
+
+=============================================================
+2️⃣ CONFIGURAR VARIABLES DE ENTORNO
+
+Crea un archivo `.env` en la carpeta `backend/` con las siguientes variables:
+
+# Puerto donde se levantará el backend
+
+PORT=5000
+
+# URI de conexión a MongoDB
+
+MONGO_URI="mongodb://usuarioFicticio:ClaveSegura123@localhost:27017/Examen?authSource=admin"
+
+# Modo de ejecución del backend (opcional)
+
+NODE_ENV=development
+
+> Ajusta MONGO_URI según tu configuración (local o Docker).
+> Nunca subas el archivo .env a repositorios públicos.
+
+=============================================================
+3️⃣ INSTALAR DEPENDENCIAS
+
+npm install
+
+=============================================================
+4️⃣ LEVANTAR EL BACKEND
+
+node server.js
+
+- El servidor debería iniciarse en http://localhost:5000
+- Se conectará automáticamente a MongoDB usando la URI definida en el .env.
+
+=============================================================
+5️⃣ COMANDOS ÚTILES
+
+| Comando        | Descripción                                |
+| -------------- | ------------------------------------------ |
+| npm install    | Instala todas las dependencias del backend |
+| node server.js | Levanta el servidor backend                |
+
+=============================================================
+OPCIONAL: DESARROLLO CON NODemon
+
+Si quieres reinicio automático del servidor al cambiar código:
+
+1. Instala nodemon globalmente o como devDependency:
+   npm install -g nodemon
+   o
+   npm install --save-dev nodemon
+
+2. Levanta el servidor con:
+   npx nodemon server.js
